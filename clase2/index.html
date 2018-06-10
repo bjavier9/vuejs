@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1 v-if="conectado">estoy en bomba</h1>
+        <div v-if="edad === 18">no puedes entrar</div>
+        <div v-else-if="edad > 200">inmortal papu</div>
+        <div v-else>entra</div>
+
+        <template v-if="conectado">
+            <h1>Bienvenido {{nombre}}</h1>
+            <ul>
+                <li href="#">
+                    <a href="">Mis datos</a>    
+                    <a href="">Mensaje</a>
+                    <a href="">datos</a>
+                </li>
+                
+            </ul>
+
+        </template>
+        <h1 v-else>desconectado</h1> 
+    <ol>
+        <li v-for="todo in todos">
+            {{todo.text}}
+        </li>
+        <button v-on:click="alrrevez">mensajes alrrevez</button>
+    </ol>
+        <pre>{{$data}}</pre>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

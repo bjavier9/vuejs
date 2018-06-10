@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   
+    <title>Document</title>
+
+    <style>
+        li{
+            cursor: pointer;
+        }
+        .completado{
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+       <h2>{{tareasCompletadas.length}} completadas</h2>
+    <ul>
+        <li 
+        :class="{completado: tarea.completado}"
+         @click="completarTarea(tarea)"
+        v-for="tarea in tareas">
+            {{tarea.titulo}}
+        </li>  
+    </ul>
+    <pre>{{$data}}</pre>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
